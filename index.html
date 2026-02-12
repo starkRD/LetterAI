@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoveLit AI | Heartfelt AI Letter Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Gochi+Hand&family=Shadows+Into+Light&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background: transparent; /* For embedding */
+      }
+      .font-letter {
+        font-family: 'Kalam', cursive;
+        line-height: 1.6;
+      }
+      .font-serif-elegant {
+        font-family: 'Playfair Display', serif;
+      }
+      .paper-texture {
+        background-color: #fcfaf2;
+        background-image: url("https://www.transparenttextures.com/patterns/parchment.png");
+      }
+      .polaroid-frame {
+        background: white;
+        padding: 10px 10px 40px 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transform: rotate(-2deg);
+      }
+      .floral-accent {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        opacity: 0.2;
+        pointer-events: none;
+      }
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        body {
+          background: white !important;
+        }
+        .print-container {
+          box-shadow: none !important;
+          border: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+      }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom": "https://esm.sh/react-dom@^19.2.4",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.4/client",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

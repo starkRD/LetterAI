@@ -1,0 +1,7 @@
+{
+  "name": "LoveLit AI - Heartfelt AI Letter Generator",
+  "description": "Create beautiful, personalized letters for your loved ones using AI. Perfect for Valentine's, anniversaries, friendships, and more. Complemented by custom songs from SongCart.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
