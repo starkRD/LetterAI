@@ -50,12 +50,13 @@ const PromotionModal: React.FC<PromotionModalProps> = ({ isOpen, onClose, onDown
               Take me to Plans & Pricing 🎵
             </a>
             
-            <button 
-              onClick={onDownload}
-              className="block w-full py-3 text-slate-500 font-medium hover:text-rose-600 transition-colors"
-            >
-              Just download my free letter for now
-            </button>
+            <button
+  type="button"
+  onClick={onDownload}
+  className="block w-full py-3 text-slate-500 font-medium hover:text-rose-600 transition-colors"
+>
+  Just download my free letter for now
+</button>
           </div>
           
           <p className="mt-6 text-xs text-slate-400">
