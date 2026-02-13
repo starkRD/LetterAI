@@ -12,7 +12,7 @@ const PromotionModal: React.FC<PromotionModalProps> = ({ isOpen, onClose, onDown
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm no-print">
       <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl transform transition-all animate-in fade-in zoom-in duration-300">
         <div className="relative h-48 bg-rose-500 overflow-hidden">
           <img 
