@@ -50,6 +50,22 @@
           padding: 0 !important;
         }
       }
+      @media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  #letter-content, #letter-content * {
+    visibility: visible !important;
+  }
+
+  #letter-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
     </style>
     <script type="importmap">
 {
