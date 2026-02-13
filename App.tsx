@@ -57,11 +57,27 @@ const App: React.FC = () => {
     setIsPromoOpen(true);
   };
 
-  const executeDownload = () => {
+  const executeDownload = async () => {
   setIsPromoOpen(false);
-  setTimeout(() => {
-    window.print();
-  }, 200);
+
+  // small delay so modal disappears
+  await new Promise((r) => setTimeout(r, 150));
+
+  const element = document.getElementById("letter-content");
+  if (!element) return;
+
+  const html2pdf = (await import("html2pdf.js")).default;
+
+  html2pdf()
+    .set({
+      margin: 10,
+      filename: `LoveLit-${Date.now()}.pdf`,
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+    })
+    .from(element)
+    .save();
 };
 
   const resetForm = () => {
