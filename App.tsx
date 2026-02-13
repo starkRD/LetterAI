@@ -58,26 +58,44 @@ const App: React.FC = () => {
   };
 
   const executeDownload = async () => {
-  setIsPromoOpen(false);
+  try {
+    setIsPromoOpen(false);
 
-  // small delay so modal disappears
-  await new Promise((r) => setTimeout(r, 150));
+    // Wait for modal to actually disappear
+    await new Promise((r) => setTimeout(r, 250));
 
-  const element = document.getElementById("letter-content");
-  if (!element) return;
+    const element = document.getElementById("letter-content");
+    if (!element) {
+      setError("Letter area not found. Please try again.");
+      return;
+    }
 
-  const html2pdf = (await import("html2pdf.js")).default;
+    // html2pdf export is annoying: sometimes default, sometimes module itself
+    const mod: any = await import("html2pdf.js");
+    const html2pdf = mod?.default || mod;
 
-  html2pdf()
-    .set({
-      margin: 10,
-      filename: `songcart-${Date.now()}.pdf`,
-      image: { type: "jpeg", quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true },
-      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
-    })
-    .from(element)
-    .save();
+    if (!html2pdf) {
+      setError("PDF library failed to load. Please refresh and try again.");
+      return;
+    }
+
+    const filename = `LoveLit-${Date.now()}.pdf`;
+
+    html2pdf()
+      .set({
+        margin: 10,
+        filename,
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, backgroundColor: "#ffffff" },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+      })
+      .from(element)
+      .save();
+
+  } catch (e: any) {
+    console.error("Download error:", e);
+    setError(e?.message || "Download failed. Please try again.");
+  }
 };
 
   const resetForm = () => {
