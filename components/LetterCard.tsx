@@ -57,7 +57,7 @@ const LetterCard: React.FC<LetterCardProps> = ({ letter, photo, senderName }) =>
         {/* Subtle Watermark for SongCart Branding */}
         <div className="mt-16 pt-8 text-center no-print">
           <div className="text-[10px] uppercase tracking-widest text-slate-400 opacity-50">
-            Lovingly created via LoveLit AI by SongCart.in
+            Lovingly created by SongCart.in
           </div>
         </div>
       </div>
