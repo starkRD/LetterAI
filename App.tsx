@@ -79,7 +79,7 @@ const App: React.FC = () => {
       return;
     }
 
-    const filename = `LoveLit-${Date.now()}.pdf`;
+    const filename = `songcart-${Date.now()}.pdf`;
 
     html2pdf()
       .set({
