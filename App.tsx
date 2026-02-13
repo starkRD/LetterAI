@@ -58,9 +58,11 @@ const App: React.FC = () => {
   };
 
   const executeDownload = () => {
+  setIsPromoOpen(false);
+  setTimeout(() => {
     window.print();
-    setIsPromoOpen(false);
-  };
+  }, 200);
+};
 
   const resetForm = () => {
     setStep(1);
